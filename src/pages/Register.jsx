@@ -6,7 +6,7 @@ const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
-    senha: '',
+    password: '',
     role: 'ADMIN'
   })
 
@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault()
     setErro(null)
     try {
-      const response = await fetch('https://gp-prof-front-mqoc.vercel.app/auth/register', {
+      const response = await fetch('http://localhost:8080/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -60,8 +60,8 @@ const Register = () => {
         <input
           type="password"
           placeholder="Senha"
-          name="senha"
-          value={formData.senha}
+          name="password"
+          value={formData.password}
           onChange={handleChange}
           required
         />

@@ -28,12 +28,12 @@ export const AuthProvider = ({ children }) => {
   }, [token])
 
   // Função para fazer login e armazenar o token
-  const login = async (username, senha) => {
+  const login = async (username, password) => {
     try {
-      const response = await fetch('https://gp-prof-front-mqoc.vercel.app/auth/login', {
+      const response = await fetch('http://localhost:8080/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, senha })
+        body: JSON.stringify({ username, password })
       })
 
       if (!response.ok) throw new Error('Usuário ou senha inválidos')

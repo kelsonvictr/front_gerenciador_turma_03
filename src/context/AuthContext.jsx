@@ -26,9 +26,9 @@ export const AuthProvider = ({ children }) => {
   }, [token])
 
   // Função para fazer login e armazenar o token
-  const login = async (username, senha) => {
+  const login = async (username, password) => {
     try {
-      const response = await api.post('/auth/login', { username, senha }) // ✅ usando api com baseURL e interceptor
+      const response = await api.post('/auth/login', { username, password }) // ✅ usando api com baseURL e interceptor
       const data = response.data
       const novoToken = data.token
 
